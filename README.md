@@ -14,9 +14,11 @@ During the hackathon, I will prepare a live demo of the capabilities of each too
 
 On next sections, I have summed up the inputs and outputs necessary for each tool.
 
-Exploratory analysis
+---
 
-Exploratory analysis figures:
+## Exploratory analysis
+
+# Exploratory analysis figures:
 rDolphin provides two kinds of exploratory visualization to ease as much as possible the evaluation of the main phenomena to monitor in the spectrum dataset analyzed.
 exemplars_plot: if reduces the spectrum_dataset to a set of around 10 spectra representative of the variability present in the dataset. It clusters the spectrum dataset into ten groups and selects the best exemplar of each spectrum. Then, it provides an interactive figure of these spectra. 
 median_plot: It calculates the median spectrum of each sample type according to metadata inputted. Then, it provides an interactive figure of these spectra.
@@ -31,7 +33,7 @@ Metadata: provided by nmrML, ISA?
 Output:
 Plotly interactive figure.
 
-Statistical heterospectroscopy:
+# Statistical heterospectroscopy:
 Statistical method to develop metabolite identification through STOCSY or RANSY (note: I’m developing the improvement of this technique; if desired, it could already be added to the workflow). Through the ‘identification_tool’ function.
 
 Necessary input: 
@@ -43,7 +45,7 @@ Method: STOCSY with Pearson correlation, STOCSY with Spearman correlation, RANSY
 Output:
 Plotly interactive plot to analyze regions of the spectrum related to the driver peak analyzed.
 
-HMDB metabolite signal repository:
+# HMDB metabolite signal repository:
 Data.frame provided by rDolphin with relevant information for each metabolite signal reported in the HMDB. rDolphin users can specify the biofluid analyzed so to ensure the metabolites annotated are typical in the biofluid analyzed and no wrong metabolite identification is performed.
 
 In the rDolphin Shiny GUI, the user can play with an interactive ‘DT’ table to filter signals by the spectrum region, the kind of multiplet and the number of times (and mean concentration) the signal has been reported in HMDB in the biofluid analyzed. Furthermore, in case of doubt, the user can click a button to go directly to the HMDB metabolite webpage to get additional information. Ideally, this interactivity should be maintained in the Phenomenal version so to maximize the information added.
@@ -53,7 +55,7 @@ Interactive figure of how profiling looks like when performed in a model spectru
 
 
 
-Automatic profiling
+## Automatic profiling
 Automatic profiling of a dataset.
 Through the ‘automatic_profiling’ function.
 Necessary input: 
@@ -79,8 +81,8 @@ Reproducibility_data: list with necessary data to reproduce quantifications so t
  
 
 
-Validation of results
-Profiling validation tables:
+## Validation of results
+# Profiling validation tables:
 The final_output list provided by the ‘automatic_profiling’ function outputted relevant inforamtion about the quality of the performed profiling. This information can be evaluated through the ‘validation’ function. This function processes the ‘final_output’ information to generate values indicative of possible inaccurate quantifications and annotations. The, it generates an interactive ‘DT’ table with a color shade that helps identify the most suspicious quantifications.
 The current processing workflow has a limited effectiveness because of the computing time demands of typical CPUs. Depending of Phenomenal H2020 computing potential, the effectiveness might be maximized. 
 Necessary input: 
@@ -107,13 +109,13 @@ Brks and clrs: information necessary to provide a different color shade for each
 
 With this list, a ‘DT’ interactive table is created.
 
-Other additional options which might be enumerated:
+# Other additional options which might be enumerated:
 Loading of information of individual quantifications.
 Individual profiling: lineshape fitting of individual signals. Especially useful to improve individual quantifications after checking quantifications that might be improved.
 
 
-Information output
-Output of ‘final_output’ collected information:
+## Information output
+# Output of ‘final_output’ collected information:
 The ‘write_info’ function generates a CSV file for each element of the ‘final_output’ list with the information generated during profiling. In addition, it associates each metabolite signal with an HMDB code so information can be easily integrated to a complete metabolomic workflow.
 Necessary input: 
 export_path: file path where csv files will be outputted. 
@@ -123,7 +125,7 @@ ROI_data: data frame with the HMDB code information necessary. It is imported fr
 Output:
 CSV files.
 
-Figures for each signal area quantification:
+# Figures for each signal area quantification:
 To validate the quality of the profiling performed. Associated information of fitting error and signal to total area ratio. Through ‘write_plots’ function.
 
 Necessary input: 
