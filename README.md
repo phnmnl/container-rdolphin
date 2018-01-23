@@ -8,7 +8,7 @@ rDolphin is an R package which provides tools for the automatic profiling of 1H 
 
 I have prepared a general diagram of the kind of inputs necessary to provide, the steps of the package workflow for atuomatic profiling and the kinds of output generated.
 
-
+![General profiling workflow](https://user-images.githubusercontent.com/21126465/35290387-663e9724-006a-11e8-8f0b-2ce11acfa35c.png)
 
 During the hackathon, I will prepare a live demo of the capabilities of each tool in the diagram to potentially help in the Phenomenal workflow.
 
