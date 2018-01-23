@@ -12,7 +12,7 @@ LABEL license="https://github.com/phnmnl/container-rdolphin/blob/master/License.
 LABEL tags="Metabolomics"
 
 # Install packages
-RUN apt-get -y update && apt-get -y --no-install-recommends install ca-certificates wget zip unzip git libcurl4-gnutls-dev libcairo2-dev libxt-dev libxml2-dev libv8-dev libnlopt-dev libnlopt0 gdebi-core pandoc pandoc-citeproc software-properties-common make gcc gfortran g++ r-recommended r-cran-rcurl r-cran-foreach r-cran-multicore r-cran-base64enc r-cran-qtl r-cran-xml libgsl2 libgsl0-dev gsl-bin libssl-dev && \
+RUN apt-get -y update && apt-get -y --no-install-recommends install ca-certificates wget zip unzip git libcurl4-gnutls-dev libcairo2-dev libxt-dev libxml2-dev libv8-dev libnlopt-dev libnlopt0 gdebi-core pandoc pandoc-citeproc software-properties-common make gcc gfortran g++ r-recommended r-cran-rcurl r-cran-foreach r-cran-multicore r-cran-base64enc r-cran-qtl r-cran-xml libgsl2 libgsl0-dev gsl-bin libssl-dev libcrmcluster-dev minpack-dev libcminpack-dev r-cran-kernlab r-cran-robustbase liblapack-dev libblas-dev && \
     R -e "install.packages(c('minpack.lm','shinyjs','reshape2','data.table','plotly','shiny','DT','fields','baseline','apcluster','missRanger','ranger','heatmaply','ggplot2','caret','e1071','elasticnet','gridExtra','stringr','knitr','rmarkdown','devtools'), repos='https://mirrors.ebi.ac.uk/CRAN/')" && \
     R -e "devtools::install_github('danielcanueto/rDolphin')"
 
